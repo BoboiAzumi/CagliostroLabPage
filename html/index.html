@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Cagliostro Research Lab">
+    <meta property="og:site_name" content="CagliostroLab">
+    <meta property="og:url" content="https://cagliostro.pages.dev">
+    <meta property="og:description" content="Virtual research lab to democratize anime-based open source AI model">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="https://cagliostro.pages.dev/assets/img/OG.webp">
+    <title>Cagliostro Research Lab</title>
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+</head>
+<body>
+    <div class="w-full h-[100vh] box-border relative hidden" id="content">
+        <header class="hidden sm:flex justify-center w-full h-[10vh] items-center bg-white z-[1]" id="navbar">
+            <h4 class=" text-black font-mono font-bold text-xl">
+                <a href=".">CagliostroLab</a>
+            </h4>
+            <div class="sm:ml-[4vw] md:ml-[20vw] flex items-center">
+                <h4 class=" text-black font-mono font-bold text-xl mx-3 transition duration-700 ease-in-out hover:text-purple-600 hover:duration-700 after:content-[''] after:bg-purple-600 after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                    <a href="#">Home</a>
+                </h4>
+                <h4 class=" text-black font-mono font-bold text-xl mx-3 transition duration-700 ease-in-out hover:text-purple-600 hover:duration-700 after:content-[''] after:bg-purple-600 after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                    <a href="#models">Models</a>
+                </h4>
+                <h4 class=" text-black font-mono font-bold text-xl mx-3 transition duration-700 ease-in-out hover:text-purple-600 hover:duration-700 after:content-[''] after:bg-purple-600 after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                    <a href="#about">About</a>
+                </h4>
+                <h4 class=" text-black font-mono font-bold text-xl mx-3 transition duration-700 ease-in-out hover:text-purple-600 hover:duration-700 after:content-[''] after:bg-purple-600 after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                    <a href="#news">News</a>
+                </h4>
+                <a href="https://huggingface.co/cagliostrolab" class="ml-5">
+                    <div class="bg-purple-600 py-2 px-4 rounded-md transition ease-in-out duration-700 hover:bg-purple-900">
+                        <h4 class="text-white">Contact Us</h4>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <!--Mobile Navbar-->
+        <div class="bg-white px-10 py-3 flex flex-row justify-between sm:hidden items-center fixed w-full z-[1]">
+            <h4 class=" text-black font-mono font-bold text-xl">
+                <a href=".">CagliostroLab</a>
+            </h4>
+            <div class="sm:hidden duration-300" id="btn_1">
+                <svg fill="#283862" class="w-10 h-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-40.92 -40.92 205.84 205.84" xml:space="preserve" stroke="#283862" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)">
+        
+                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                    
+                    <path transform="translate(-40.92, -40.92), scale(12.865)" fill="#f9f9f9" d="M9.166.33a2.25 2.25 0 00-2.332 0l-5.25 3.182A2.25 2.25 0 00.5 5.436v5.128a2.25 2.25 0 001.084 1.924l5.25 3.182a2.25 2.25 0 002.332 0l5.25-3.182a2.25 2.25 0 001.084-1.924V5.436a2.25 2.25 0 00-1.084-1.924L9.166.33z" strokewidth="0"/>
+                    
+                    </g>
+                    
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <g id="SVGRepo_iconCarrier"> <g> <path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/> <path d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/> <path d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/> </g> </g>
+                    
+                </svg>
+            </div>
+        </div>
+
+        <!---Navbar Mobile-->
+        <div class="fixed w-full transition-transform duration-500 translate-y-[-100rem] z-[1]" id="mobile_navbar">
+            <div class="flex-col w-full bg-white px-6 py-5 sm:hidden">
+                <div class="border border-solid border-purple-800 bg-white text-black hover:text-white hover:bg-purple-800 px-2 py-2 rounded-md mb-3" onclick="toggle()">
+                    <a href="#">
+                        <h6 class="text-xl font-bold ">Home</h2>
+                    </a>
+                </div>
+                <div class="border border-solid border-purple-800 bg-white text-black hover:text-white hover:bg-purple-800 px-2 py-2 rounded-md mb-3" onclick="toggle()">
+                    <a href="#models">
+                        <h6 class="text-xl font-bold ">Models</h2>
+                    </a>
+                </div>
+                <div class="border border-solid border-purple-800 bg-white text-black hover:text-white hover:bg-purple-800 px-2 py-2 rounded-md mb-3" onclick="toggle()">
+                    <a href="#about">
+                        <h6 class="text-xl font-bold ">About</h2>
+                    </a>
+                </div>
+                <div class="border border-solid border-purple-800 bg-white text-black hover:text-white hover:bg-purple-800 px-2 py-2 rounded-md mb-3" onclick="toggle()">
+                    <a href="#news">
+                        <h6 class="text-xl font-bold ">News</h2>
+                    </a>
+                </div>
+                <div class="bg-purple-800 px-2 py-2 rounded-md mb-3" onclick="toggle()">
+                    <a href="https://huggingface.co/cagliostrolab">
+                        <h6 class="text-white text-xl font-bold ">Contact Us</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border-white bg-opacity-30 p-4 font-mono font-bold text-3xl backdrop-blur-lg rounded-md hidden" id="banner">
+            <h2 class="text-purple-950 text-center">Virtual research lab to democratize anime-based open source AI model</h2>
+        </div>
+        <img class="change w-[100vw] h-[110vh] object-cover object-center transition-opacity duration-1000 ease-in-out opacity-0">
+        
+        <!---Models--->
+        <div id="models" class="h-20"></div>
+        <h1 class="text-center mb-5 mt-10 text-xl md:text-3xl font-mono font-bold text-purple-800">Models</h1>
+        <div class="w-full h-auto xl:px-48 lg:px-40 md:px-32 sm:px-20">
+            <div class="grid grid-flow-row-dense grid-cols-1 sm:grid-cols-2 p-3 gap-2">
+                <!--Grid Item-->
+                <div class="bg-[#f2f3f4] px-10 pt-8 pb-4 rounded-md">
+                    <h3 class="text-xl font-bold text-purple-800">Animagine XL 3.0</h3>
+                    <img class="w-full h-48 object-cover rounded-sm my-4" src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/a6e71784-afec-4a83-876f-1df167381e44/original=true/ep_oy_NVSMQaU162w8Gwp.jpeg">
+                    <p class="text-justify text-purple-950">Animagine XL 3.0 is the latest version of the sophisticated open-source anime text-to-image model, building upon the capabilities of its predecessor, Animagine XL 2.0. Developed based on Stable Diffusion XL, this iteration boasts superior image generation with notable improvements in hand anatomy, efficient tag ordering, and enhanced knowledge about anime concepts. Unlike the previous iteration, we focused to make the model learn concepts rather than aesthetic.</p>
+                    <div class="grid grid-flow-row-dense grid-cols-1 gap-5 my-8">
+                        <a href="https://civitai.com/models/260267/animagine-xl-v3">
+                            <div class="bg-purple-800 py-2 px-4 rounded-md transition ease-in-out duration-700 hover:bg-purple-950">
+                                <h4 class="text-white font-bold">Get Animagine XL 3.0</h4>
+                            </div>
+                        </a>
+                        <a href="https://huggingface.co/spaces/Linaqruf/animagine-xl">
+                            <div class="bg-white py-2 px-4 rounded-md transition ease-in-out duration-700 hover:bg-purple-800 text-black hover:text-white border border-purple-800 border-solid">
+                                <h4 class="font-bold">Huggingface Space</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-10 pt-8 pb-4 rounded-md">
+                    <h3 class="text-xl font-bold text-purple-800">Animagine XL 2.0 (Legacy)</h3>
+                    <img class="w-full h-48 object-cover rounded-sm my-4" src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/90cdc38f-3420-444c-8527-29dca6647cd9/original=true/fmkK9WYAPgwbrDcKOybBZ.jpeg">
+                    <p class="text-justify text-purple-950">Animagine XL 2.0 is an advanced latent text-to-image diffusion model designed to create high-resolution, detailed anime images. It's fine-tuned from Stable Diffusion XL 1.0 using a high-quality anime-style image dataset. This model, an upgrade from Animagine XL 1.0, excels in capturing the diverse and distinct styles of anime art, offering improved image quality and aesthetics.</p>
+                    <div class="grid grid-flow-row-dense grid-cols-1 gap-5 my-8">
+                        <a href="https://civitai.com/models/122533/animagine-xl-legacy">
+                            <div class="bg-purple-800 py-2 px-4 rounded-md transition ease-in-out duration-700 hover:bg-purple-950">
+                                <h4 class="text-white font-bold">Get Animagine XL (Legacy)</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---About--->
+        <div id="about" class="h-20"></div>
+        <h1 class="text-center mb-5 my-10 text-xl md:text-3xl font-mono font-bold text-purple-800">About CagliostroLab</h1>
+        <div class="w-full h-auto xl:px-48 lg:px-40 md:px-24 sm:px-16 px-12">
+            <div class="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                <!--Grid Item-->
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://pbs.twimg.com/profile_images/1701878200761208832/HwfjzTNE_400x400.jpg" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">Linaqruf</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Leader)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/63edfe94f599efc7a00e3619/KCGMnuEjw2t6Bi8uAv3N_.png?w=200&h=200&f=face" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">Bell-Fi</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Chief, Dev)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/6456f3ca1ca9debab0554f8b/pQuSK-pS3NnJgXewbODvh.png?w=200&h=200&f=face" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">Damar Jati</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Dev)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/64c088660a4d02f37a965f6c/si3VTXZEM-1L5O4q2JRbo.png?w=200&h=200&f=face" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">Asahina</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Chief, Dev)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://e0.pxfuel.com/wallpapers/444/544/desktop-wallpaper-ayanokouji-kiyotaka-classroom-of-the-elite-ilustrasi-karakter-gambar-anime-gambar-karakter.jpg" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">Sugeng.cpp</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Dev)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://scontent.fkno6-1.fna.fbcdn.net/v/t39.30808-6/395141006_1076557640177140_1425994809956049600_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9c7eae&_nc_eui2=AeGfI3SwTUoB5LK7wZqKBtjvVkII_7rCUilWQgj_usJSKSwe00yOzs-_h3F3CQ8t8ikxtL15U_00xztIU8Styi5r&_nc_ohc=u9I5r_BQmAMAX9XnT0x&_nc_ht=scontent.fkno6-1.fna&oh=00_AfCxFolPpcuM-3HqybSqm_45oXpCYGZ2RMg4n7G5J4G8BQ&oe=65B8973F" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">NekoFi</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Dev)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/noauth/g9JX1KpSrRdOuhTa9taLV.png?w=200&h=200&f=face" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">Scipius2121</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Dataset Curator)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/64b24543eec33e27dc9a6eca/TZswzwN-cSpYEr11yhfU1.png?w=200&h=200&f=face" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">Raelina</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Dev)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2f3f4] px-4 md:px-10 pt-8 pb-4 rounded-md">
+                    <div class="flex gap-4 md:gap-10">
+                        <img src="https://avatars.githubusercontent.com/u/68107917?v=4" class="w-28 h-28 object-cover rounded-md">
+                        <div class="block">
+                            <h3 class="text-md md:text-lg text-purple-800 font-bold">NnA_KanA</h3>
+                            <h5 class="text-sm md:text-md text-purple-600">(Dev)</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--News-->
+        <div id="news" class="h-20"></div>
+        <h1 class="text-center mb-5 my-10 text-xl md:text-3xl font-mono font-bold text-purple-800">News</h1>
+        <div class="w-full h-auto xl:px-48 lg:px-40 md:px-32 sm:px-20">
+            <div class="grid grid-flow-row-dense grid-cols-1 sm:grid-cols-2 p-3 gap-2">
+                <!--Grid Item-->
+                <div class="bg-[#f2f3f4] px-10 pt-8 pb-4 rounded-md">
+                    <h3 class="text-xl font-bold text-purple-800">Animagine XL 3.0 Released</h3>
+                    <h5>2024-01-10</h5>
+                    <img class="w-full h-48 object-cover rounded-sm my-4" src="https://cdn-uploads.huggingface.co/production/uploads/6365c8dbf31ef76df4042821/pSTmKK1j6LKGkLuttwcHG.webp">
+                    <p class="text-justify text-purple-950 indent-6">Two months ago, we announced Animagine XL 2.0. Today, we are happy to introduce you to Animagine XL 3.0, the next iteration of our opinionated open-source anime text-to-image model based on Stable Diffusion XL. Following the last iteration, V3 has been developed and improved in order to become the best open anime image generation model.</p>
+                    <p class="text-justify text-purple-950 indent-6">Compared to the last iteration, it has better knowledge, better concept, and prompt understanding. It also can generate much better hand anatomy.</p>
+                    <div class="grid grid-flow-row-dense grid-cols-1 gap-5 my-8">
+                        <a href="https://cagliostrolab.net/posts/animagine-xl-v3-release">
+                            <div class="bg-purple-800 py-2 px-4 rounded-md transition ease-in-out duration-700 hover:bg-purple-950">
+                                <h4 class="text-white font-bold">Read</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="p-4 mt-10 bg-[#f2f3f4] ">
+            <p>© 2024 Cagliostro Research Lab. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border-white bg-opacity-30 p-4 font-mono font-bold text-3xl backdrop-blur-lg rounded-md transition ease-in-out duration-700" id="loading">
+        <h2 class="text-purple-950 text-center">Loading Assets</h2>
+        <h2 class="text-purple-950 text-center" id="loaded"></h2>
+    </div>
+
+    <script type="text/javascript" src="./assets/js/changer.js"></script>
+    <script type="text/javascript" src="./assets/js/navbar.js"></script>
+    <script type="text/javascript" src="./assets/js/stickynavbar.js"></script>
+</body>
+</html>
